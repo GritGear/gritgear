@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #1f1c18, #3c2b2a, #7a4e2c);
+            color: white;
+            padding-top: 80px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand img {
+            height: 40px;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-left: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .language-switcher {
+            margin-left: 2rem;
+        }
+
+        .language-switcher button {
+            background: #444;
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .language-switcher button.active {
+            background: #7a4e2c;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            padding: 0 1rem 2rem;
+        }
+
+        .content section {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="brand">
+        <img src="logo.png" alt="Brand Logo" />
+        <span>GritGear</span>
+    </div>
+    <div class="nav-links">
+        <a href="https://gritgear.tebex.io/" target="_blank">Tebex</a>
+        <a href="https://discord.gg/uu56b5Kbkk" target="_blank">Discord</a>
+        <a href="https://www.youtube.com/@GritGear-GG" target="_blank">YouTube</a>
+        <span class="language-switcher">
+        <button id="btn-en" class="active">EN</button>
+        <button id="btn-ja">JA</button>
+      </span>
+    </div>
+</header>
+
+<h1>Terms of Service</h1>
+<div class="content">
+    <div id="tos-en">
+        <!-- English terms will be placed here -->
+        <section>
+            <h2>License Scope</h2>
+            <p>
+                One license is valid for use on a single production server only.<br>
+                Development and test servers are allowed without limitation, as long as they are private, non-commercial, and not publicly accessible.<br>
+                If a development server is used publicly or monetized, it will be treated as a production server and violate the license agreement. <br>
+                Multiple production servers require separate licenses.
+            </p>
+        </section>
+        <section>
+            <h2>Prohibited Actions</h2>
+            <p>
+                Redistribution, resale, or transfer of the script or its parts to third parties is prohibited.<br>
+                This includes packaging the script into server bundles or offering it as part of paid services.
+            </p>
+        </section>
+        <section>
+            <h2>Disclaimer</h2>
+            <p>
+                The developer is not responsible for any server issues, data loss, or damages resulting from the script.<br>
+                External APIs may affect script functionality.
+            </p>
+        </section>
+    </div>
+
+    <div id="tos-ja" style="display: none;">
+        <!-- Japanese terms will be placed here -->
+        <section>
+            <h2>ライセンスの適用範囲</h2>
+            <p>
+                1つのライセンスは、本番サーバー1台での使用に限り有効です。<br>
+                開発・テストサーバーは台数制限なく使用可能ですが、非公開かつ非商用である必要があります。<br>
+                第三者がアクセス可能な開発サーバーや、収益目的での使用は本番サーバーとみなされ、ライセンス違反となります。<br>
+                本番サーバーが複数ある場合は、サーバーごとにライセンスを購入してください。
+            </p>
+        </section>
+        <section>
+            <h2>禁止事項</h2>
+            <p>
+                スクリプトの再配布・再販売・第三者への譲渡は禁止されています。<br>
+                これには、サーバーパッケージに組み込む行為や、有料サービスの一部として提供することも含まれます。
+            </p>
+        </section>
+        <section>
+            <h2>免責事項</h2>
+            <p>
+                本スクリプトの使用によって発生したサーバー障害、データ損失、損害などに対し、開発者は一切の責任を負いません。<br>
+                外部APIの影響で機能が制限される場合があります。
+            </p>
+        </section>
+    </div>
+</div>
+
+<script>
+    const btnEn = document.getElementById('btn-en');
+    const btnJa = document.getElementById('btn-ja');
+    const tosEn = document.getElementById('tos-en');
+    const tosJa = document.getElementById('tos-ja');
+
+    btnEn.addEventListener('click', () => {
+        tosEn.style.display = 'block';
+        tosJa.style.display = 'none';
+        btnEn.classList.add('active');
+        btnJa.classList.remove('active');
+    });
+
+    btnJa.addEventListener('click', () => {
+        tosEn.style.display = 'none';
+        tosJa.style.display = 'block';
+        btnEn.classList.remove('active');
+        btnJa.classList.add('active');
+    });
+</script>
+</body>
+</html>
